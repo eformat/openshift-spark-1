@@ -12,14 +12,14 @@ labels:
     - name: maintainer
       value: Trevor McKay <tmckay@redhat.com>
     - name: sparkversion
-      value: 3.0.1
+      value: 3.1.2
     - name: "io.openshift.s2i.scripts-url"
       value: "image:///usr/libexec/s2i"
 
 packages:
     install:
         - java-11-openjdk
-        # python36 added in the common module
+        # python38 added in the common module
         - python3-numpy
 
 modules:

@@ -30,8 +30,8 @@
         # Switch to 'root' user to install 'common' module defined packages
         USER root
         # Install packages defined in the 'common' module
-        RUN yum --setopt=tsflags=nodocs install -y python36 \
-            && rpm -q python36
+        RUN yum --setopt=tsflags=nodocs install -y python38 \
+            && rpm -q python38
         # Set 'common' module defined environment variables
         ENV \
             SPARK_INSTALL="/opt/spark-distro" 
@@ -55,7 +55,7 @@
 ###### \
         # Copy 'spark' module general artifacts
         COPY \
-            spark-3.0.1-bin-hadoop3.2.tgz \
+            spark-3.1.2-bin-hadoop3.2.tgz \
             /tmp/artifacts/
         # Copy 'spark' module content
         COPY modules/spark /tmp/scripts/spark
@@ -113,7 +113,7 @@
             io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"  \
             maintainer="Trevor McKay <tmckay@redhat.com>"  \
             name="radanalyticsio/openshift-spark"  \
-            sparkversion="3.0.1"  \
+            sparkversion="3.1.2"  \
             version="3.0" 
 ###### /
 ###### END image 'radanalyticsio/openshift-spark:3.0'
